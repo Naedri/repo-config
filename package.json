@@ -1,0 +1,33 @@
+{
+    "name": "repo-config",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "format": "sort-package-json package.json && prettier --write .",
+        "format:check": "sort-package-json --check package.json && prettier --check .",
+        "prepare": "simple-git-hooks"
+    },
+    "simple-git-hooks": {
+        "pre-commit": "pnpm exec lint-staged",
+        "pre-push": "pnpm run format:check"
+    },
+    "devDependencies": {
+        "lint-staged": "^17.6.1",
+        "prettier": "^3.10.1",
+        "simple-git-hooks": "^2.14.0",
+        "sort-package-json": "^4.1.0"
+    },
+    "packageManager": "pnpm@12.21.0",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "12.21.0",
+            "onFail": "download"
+        }
+    }
+}

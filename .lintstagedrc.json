@@ -1,0 +1,4 @@
+{
+  "package.json": ["sort-package-json", "prettier --write"],
+  "*.{js,jsx,ts,tsx,json,md,yaml,yml}": ["prettier --write"]
+}
